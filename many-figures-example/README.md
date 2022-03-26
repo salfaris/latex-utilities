@@ -1,3 +1,3 @@
 # many-figures
 
-![example](many-figures.pdf)
+![example](./example.png)
