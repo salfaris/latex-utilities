@@ -1,0 +1,79 @@
+\documentclass[11pt,oneside]{article}
+
+\usepackage{amssymb, amsmath, geometry}
+\usepackage{parskip}
+
+% Nice colored boxes.
+\usepackage[dvipsnames]{xcolor}
+\usepackage[many]{tcolorbox}
+
+% Box 1
+\newtcolorbox{myAwesomeBox}{
+    enhanced,
+    sharp corners,
+    breakable,  % Allows page break.
+    borderline west={2pt}{0pt}{Red},
+    colback=Red!10,  % Background color.
+    colframe=Red!10  % Frame (border) color.
+}
+
+% Box 2
+\newtcolorbox{anotherAwesomeBox}{
+    enhanced,
+    sharp corners,
+    breakable,  % Allows page break.
+    borderline west={2pt}{0pt}{Cerulean},
+    colback=Cerulean!10,  % Background color.
+    colframe=Cerulean!10  % Frame (border) color.
+}
+
+% Box 3
+\newtcolorbox{proofBox}{
+    enhanced,
+    sharp corners,
+    breakable,  % Allows page break.
+    borderline west={2pt}{0pt}{Gray},
+    colback=Gray!10,  % Background color.
+    colframe=Gray!10  % Frame (border) color.
+}
+
+\begin{document} 
+
+Here is our pastel color box theorem.
+
+\begin{myAwesomeBox}
+    \textbf{Theorem A.} There exists a nice pastel-colored blue box.
+\end{myAwesomeBox}
+
+\begin{anotherAwesomeBox}
+    \textit{Proof}. This is a nice pastel-colored blue box. $\blacksquare$
+\end{anotherAwesomeBox}
+
+\medskip
+
+Let's try an actual theorem which has some use in number theory.
+
+\begin{myAwesomeBox}
+    \textbf{Proposition B.} Consider a weakly modular function $ f: \mathcal{H} \to \mathbb{C} $ of weight $ k $ with respect to $ \Gamma $ . Then $ f $ is periodic of some period $ h $ and there exists a function $ g: \mathcal{D^*} \to \mathbb{C} $ such that $ f(z) = (g \circ q_h)(z) $ where $ q_h(z) = e^{2 \pi i z/h} $.
+\end{myAwesomeBox}
+
+\begin{proofBox}
+    Any congruence subgroup $ \Gamma \subseteq \mathrm{SL}_2(\mathbb{Z}) $ contains a translation matrix of the form
+    \[
+       \gamma = \begin{pmatrix}
+           1 & h \\
+           0 & 1
+       \end{pmatrix}.
+    \]
+    Now if we compute the factor of automorphy, we have $ j(\gamma, z) = 1 $ which implies that
+    \[
+       f(z) = f[\gamma]_k = f(\gamma(z)) = f(z + h),
+    \]
+    by weakly modularity. In other words, $ f $ is periodic of period $ h $. It is obvious that the function $ q_h $ is a holomorphic function $ \mathcal{H} \to \mathcal{D^*} $ and is periodic of period $ h $ as well. So we can consider the function $ g: \mathcal{D^*} \to \mathbb{C} $ defined by
+    \[
+       g(q_h) = f \left( \frac{h \log q_h}{2 \pi i} \right),
+    \]
+    which satisfies $ f(z) = g(q_h) $. Since $ f $ is periodic of period $ h $, we can choose any branch of $ \log q_h $ in $ \mathcal{H} $ and so $ g $ is well-defined. This completes the proof. $ \blacksquare$
+\end{proofBox}
+
+\end{document}
