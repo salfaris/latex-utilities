@@ -1,0 +1,73 @@
+\documentclass[11pt,oneside]{article}
+
+\usepackage{amssymb,amsmath}
+
+\usepackage{geometry}
+\geometry{
+    top=20mm,
+    bottom=20mm,
+}
+
+% All the figure magic happens due to these two packages. 
+% IMPORTANT :- Remove demo param to replace with actual images.
+\usepackage[demo]{graphicx}
+\usepackage{subcaption}
+
+
+\begin{document} 
+
+$\bullet$ A single figure:
+
+\begin{figure}[!htp]
+    \centering
+    \includegraphics{} % Insert image path in this {} here.
+    \caption{A simple figure.}
+\end{figure}    
+
+\vspace{0.8cm}
+
+$\bullet$ Three subfigures side by side, assuming sufficient space:
+
+\begin{figure}[!htp]
+    \centering
+    \begin{subfigure}{0.3\linewidth}
+    \includegraphics[width=\linewidth]{} % Insert image path in this {} here.
+    \caption{Subfigure 1}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.3\linewidth}
+    \includegraphics[width=\linewidth]{} % Insert image path in this {} here.
+    \caption{Subfigure 2.}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.3\linewidth}
+    \includegraphics[width=\linewidth]{} % Insert image path in this {} here.
+    \caption{Subfigure 3.}
+    \end{subfigure}
+    
+    \caption{Horizontal stack.}
+\end{figure}
+
+\vspace{0.8cm}
+$ \bullet $ Three subfigures in a weird stack:
+
+\begin{figure}[!htp]
+    \centering
+    \begin{subfigure}{0.45\linewidth}
+    \includegraphics[width=\linewidth]{} % Insert image path in this {} here.
+    \caption{Subfigure 1}
+    \end{subfigure}\hfil
+    \begin{subfigure}{0.45\linewidth}
+    \includegraphics[width=\linewidth]{} % Insert image path in this {} here.
+    \caption{Subfigure 2.}
+    \end{subfigure}
+
+    % Adding this literal space (not even the \smallskip below) creates a new row. This is the nice things of the subcaption package!
+    \smallskip
+    \begin{subfigure}{0.45\linewidth}
+    \includegraphics[width=\linewidth]{} % Insert image path in this {} here.
+    \caption{Subfigure 3.}
+    \end{subfigure}
+    
+    \caption{Triangle stack.}
+\end{figure}
+
+\end{document}
