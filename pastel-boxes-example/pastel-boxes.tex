@@ -54,22 +54,22 @@ Here is our pastel color box theorem.
 Let's try an actual theorem which has some use in number theory.
 
 \begin{myAwesomeBox}
-    \textbf{Proposition B.} Consider a weakly modular function $ f: \mathcal{H} \to \mathbb{C} $ of weight $ k $ with respect to $ \Gamma $ . Then $ f $ is periodic of some period $ h $ and there exists a function $ g: \mathcal{D^*} \to \mathbb{C} $ such that $ f(z) = (g \circ q_h)(z) $ where $ q_h(z) = e^{2 \pi i z/h} $.
+    \textbf{Proposition B.} Consider a weakly modular function $ f: \mathcal{H} \to \mathbb{C} $ of weight $ k $ with respect to $ \Gamma $ . Then $ f $ is periodic of some period $ h $ and there exists a function $ g: \mathcal{D^*} \to \mathbb{C} $ such that $ f(z) = g(q_h) $ where $ q_h(z) = e^{2 \pi i z/h} $.
 \end{myAwesomeBox}
 
 \begin{proofBox}
-    Any congruence subgroup $ \Gamma \subseteq \mathrm{SL}_2(\mathbb{Z}) $ contains a translation matrix of the form
+    \textit{Proof.} It should be clear that any congruence subgroup $ \Gamma \subseteq \mathrm{SL}_2(\mathbb{Z}) $ contains a translation matrix of the form
     \[
        \gamma = \begin{pmatrix}
            1 & h \\
            0 & 1
        \end{pmatrix}.
     \]
-    Now if we compute the factor of automorphy, we have $ j(\gamma, z) = 1 $ which implies that
+    Computing the factor of automorphy under $ \gamma $, we have $ j(\gamma, z) = 1 $ for any $ z \in \mathcal{H} $ which, by weakly modularity of $ f $, implies that
     \[
-       f(z) = f[\gamma]_k = f(\gamma(z)) = f(z + h),
+       f(z) = f[\gamma]_k = f(\gamma(z)) = f(z + h).
     \]
-    by weakly modularity. In other words, $ f $ is periodic of period $ h $. It is obvious that the function $ q_h $ is a holomorphic function $ \mathcal{H} \to \mathcal{D^*} $ and is periodic of period $ h $ as well. So we can consider the function $ g: \mathcal{D^*} \to \mathbb{C} $ defined by
+    In other words, $ f $ is periodic of period $ h $. It is obvious that the function $ q_h $ is a holomorphic function $ \mathcal{H} \to \mathcal{D^*} $ and is periodic of period $ h $ as well. So we can consider the function $ g: \mathcal{D^*} \to \mathbb{C} $ defined by
     \[
        g(q_h) = f \left( \frac{h \log q_h}{2 \pi i} \right),
     \]
